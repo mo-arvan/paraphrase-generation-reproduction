@@ -72,6 +72,7 @@ def print_datasets_used(responses_processed_df):
     datasets_grouped = datasets_and_index[["dataset"]].groupby("dataset").agg(count=("dataset", "size")).reset_index()
 
     datasets_grouped.to_csv("results/datasets_used.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
+    datasets_grouped.to_latex("results/tables/datasets_used.tex", index=False, escape=False, float_format="%.2f")
     print(datasets_grouped)
 
 
@@ -117,6 +118,7 @@ def calculate_metrics(responses_processed_df):
     metrics_df = pd.DataFrame(metrics_list)
 
     metrics_df.to_csv("results/metrics.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
+    metrics_df.to_latex("results/tables/metrics.tex", index=False, escape=False, float_format="%.2f")
 
     print(metrics_df)
 
