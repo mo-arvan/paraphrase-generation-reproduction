@@ -58,6 +58,9 @@ def main():
     results_df = pd.read_csv("results/metrics.csv")
     hosking_results = pd.read_csv("results/Hosking_results.csv")
 
+    results_df.sort_values(by="system", inplace=True)
+    hosking_results.sort_values(by="system", inplace=True)
+    # need to ensure that the data is in the same order, this can be done using the system column
     original_values = hosking_results["best_worst_scale"].values
     ours_values = results_df["best_worst_scale"].values
 
