@@ -1,7 +1,7 @@
 FROM python:3.11-buster
 
 RUN pip install --upgrade pip && \
-    pip install pandas numpy plotly krippendorff seaborn jinja2
+    pip install pandas numpy plotly krippendorff seaborn jinja2 scipy
 
 #RUN pip install --upgrade pip && \
  #    pip install scipy && \

@@ -70,11 +70,11 @@ def plot_time_spent_on_pages():
     time_spent_on_welcome.loc[
         time_spent_on_welcome > time_spent_welcome_cap] = time_spent_welcome_cap
 
-    time_spent_instructions_cap = time_spent_on_instructions.quantile(0.95)
+    time_spent_instructions_cap = time_spent_on_instructions.quantile(0.99)
     time_spent_on_instructions.loc[
         time_spent_on_instructions > time_spent_instructions_cap] = time_spent_instructions_cap
 
-    time_spent_task_cap = time_spent_on_task.quantile(0.95)
+    time_spent_task_cap = time_spent_on_task.quantile(0.99)
     time_spent_on_task.loc[
         time_spent_on_task > time_spent_task_cap] = time_spent_task_cap
 
