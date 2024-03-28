@@ -14,9 +14,45 @@ def get_selected_systems(meaning_i):
     return value
 
 
-def process_responses_df(responses_df):
-    results_list = []
+def filter_attention_checks(results_df):
+    """
+    when the system is 'distractor', the output is a random sample with a completely different meaning,
+    and should never be chosen as best for 'meaning'.
+    HITs where either of these controls were failed were rejected and resubmitted to MTurk.
+    :param results_df:
+    :return:
+    """
     attention_check_list = ["distractor", "golds", "inputs"]
+
+    system_a_is_ditractor = results_df[results_df["systema"] == "distractor"]
+    system_b_is_distractor = results_df[results_df["systemb"] == "distractor"]
+
+    system_a_is_ditractor_and_selected = system_a_is_ditractor[system_a_is_ditractor["selected_system"] == 0]
+    system_b_is_ditractor_and_selected = system_b_is_distractor[system_b_is_distractor["selected_system"] == 1]
+
+    users_with_failed_attention_checks = system_a_is_ditractor_and_selected["participant_id"].tolist()
+    users_with_failed_attention_checks += system_b_is_ditractor_and_selected["participant_id"].tolist()
+
+    users_with_attention_checks = system_a_is_ditractor["participant_id"].tolist()
+    users_with_attention_checks += system_b_is_distractor["participant_id"].tolist()
+
+    users_with_failed_attention_checks = list(set(users_with_failed_attention_checks))
+
+    users_without_attention_checks = results_df[~results_df["participant_id"].isin(users_with_attention_checks)][
+        "participant_id"].tolist()
+
+    print(f"Users without attention checks: {len(users_without_attention_checks)}")
+
+    filtered_results_df = results_df[~results_df["participant_id"].isin(users_with_failed_attention_checks)]
+
+    filtered_results_df = filtered_results_df[~filtered_results_df["systema"].isin(attention_check_list)]
+    filtered_results_df = filtered_results_df[~filtered_results_df["systemb"].isin(attention_check_list)]
+
+    return filtered_results_df
+
+
+def preprocess_responses_df(responses_df):
+    results_list = []
 
     for _, row in responses_df.iterrows():
         for i in range(32):
@@ -26,9 +62,9 @@ def process_responses_df(responses_df):
             results_dict[f"systemb"] = row[f"systemb{i}"]
             system_a_and_b = [results_dict[f"systema"], results_dict[f"systemb"]]
 
-            if any([x in attention_check_list for x in system_a_and_b]):
-                # it is not clear what to do when a participant fails the attention check
-                continue
+            # if any([x in attention_check_list for x in system_a_and_b]):
+            #     # it is not clear what to do when a participant fails the attention check
+            #     continue
 
             results_dict["dataset"] = row[f"dataset{i}"]
             results_dict["dataset_index"] = row[f"ix{i}"]
@@ -43,13 +79,15 @@ def process_responses_df(responses_df):
 
     results_df = pd.DataFrame(results_list)
 
+    results_df = filter_attention_checks(results_df)
+
     results_df["selected_system"] = results_df["selected_system"].apply(int)
 
     return results_df
 
 
 def calculate_inter_annotator_agreement(responses_processed_df):
-    annotation_matrix = (
+    reliability_data = (
         responses_processed_df[['task_id', "participant_id", "selected_system"]].pivot_table(
             index="participant_id",
             columns="task_id",
@@ -57,11 +95,11 @@ def calculate_inter_annotator_agreement(responses_processed_df):
             aggfunc="first")
         .reset_index(drop=True))
 
-    annotation_matrix.to_csv("results/annotation_matrix.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
+    reliability_data.to_csv("results/lab1/reliability_data.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
 
-    alpha = krippendorff.alpha(annotation_matrix.to_numpy(), level_of_measurement='nominal')
+    alpha = krippendorff.alpha(reliability_data.to_numpy(), level_of_measurement='nominal')
 
-    with open("results/alpha.txt", "w") as f:
+    with open("results/lab1/krippendorff_alpha.txt", "w") as f:
         f.write(f"Krippendorff's Alpha: {alpha:.3f}")
     print(f"Krippendorff's Alpha: {alpha:.3f}")
     return alpha
@@ -71,8 +109,8 @@ def print_datasets_used(responses_processed_df):
     datasets_and_index = responses_processed_df[["dataset", "dataset_index"]].drop_duplicates(keep="first")
     datasets_grouped = datasets_and_index[["dataset"]].groupby("dataset").agg(count=("dataset", "size")).reset_index()
 
-    datasets_grouped.to_csv("results/datasets_used.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
-    datasets_grouped.to_latex("results/tables/datasets_used.tex", index=False, escape=True, float_format="%.2f")
+    datasets_grouped.to_csv("results/lab1/datasets_used.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
+    datasets_grouped.to_latex("results/lab1/tables/datasets_used.tex", index=False, escape=True, float_format="%.2f")
     print(datasets_grouped)
 
 
@@ -114,11 +152,18 @@ def calculate_metrics(responses_processed_df):
             "win_percentage": win_percentage,
         }
         metrics_list.append(metrics_dict)
+    system_order_dict = {"vae": 0,
+                         "lbow": 1,
+                         "sep_ae": 2,
+                         "hrq": 3
+                         }
+
+    metrics_list = sorted(metrics_list, key=lambda x: system_order_dict[x["system"]])
 
     metrics_df = pd.DataFrame(metrics_list)
 
-    metrics_df.to_csv("results/metrics.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
-    metrics_df.to_latex("results/tables/metrics.tex", index=False, escape=True, float_format="%.2f")
+    metrics_df.to_csv("results/lab1/results.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
+    metrics_df.to_latex("results/lab1/tables/metrics.tex", index=False, escape=True, float_format="%.2f")
 
     print(metrics_df)
 
@@ -127,7 +172,7 @@ def calculate_metrics(responses_processed_df):
 
 def main():
     responses_df = pd.read_csv('responses/responses.csv')
-    responses_processed_df = process_responses_df(responses_df)
+    responses_processed_df = preprocess_responses_df(responses_df)
 
     print_datasets_used(responses_processed_df)
 

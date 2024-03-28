@@ -1,14 +1,16 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/generic.js') }}"></script>
+
 
 <head>
     <meta charset="UTF-8">
@@ -33,6 +35,10 @@
         .active-step {
             display: block;
         }
+
+        .init-hidden {
+            display: none;
+        }
     </style>
 </head>
 <div class="container py-3 bg-light">
@@ -45,17 +51,14 @@
                 <h4 class="alert-heading">Please Note</h4>
                 <p>To participate, you must:</p>
                 <ul>
-                    <li>Be an <strong>adult</strong> and a <strong>native English speaker</strong>. </li>
+                    <li>Be an <strong>adult</strong> and a <strong>native English speaker</strong>.</li>
                     <li>Read and accept to the <strong>consent terms.</strong>
                     </li>
                     <li>Read and fully understand the provided <strong>instructions.</strong>
                     </li>
                 </ul>
             </div>
-            <button class="btn btn-primary" onclick="proceedToConsentPage()">Agree &amp; Continue</button>
-        </div>
-        <!-- Step 2: Consent -->
-        <div class="step-content form-group container" id="step2">
+            <!-- Step 2: Consent -->
             <div class="overflow-auto bg-white" style="height: 500px;margin-bottom: 16px;">
                 <h2>Research Information and Consent for Participation in Social, Behavioral, or Educational Research
                 </h2>
@@ -140,7 +143,7 @@
                 <p>
                     <strong>HOW MUCH TIME WILL I SPEND ON THE STUDY?</strong>
                 </p>
-                <p>Each task takes 20 minutes to complete.</p>
+                <p>Each task takes 8 minutes to complete.</p>
                 <p>
                     <strong>ARE THERE ANY BENEFITS TO TAKING PART IN THE STUDY?</strong>
                 </p>
@@ -171,7 +174,8 @@
                     complaints, or if you feel you have not been treated according to the description in this form; or
                     to offer input you may call the UIC Office for the Protection of Research Subjects (OPRS) at
                     312-996-1711 or 1-866-789-6215 (toll-free) or e-mail OPRS at <a href="mailto:uicirb@uic.edu"
-                        title="mailto:uicirb@uic.edu">uicirb@uic.edu</a>. </p>
+                                                                                    title="mailto:uicirb@uic.edu">uicirb@uic.edu</a>.
+                </p>
                 <p>
                     <strong>Please review the rest of this document for details about these topics and additional things
                         you should know before</strong>
@@ -226,14 +230,15 @@
                     <strong>Will I be reimbursed for any of my expenses or paid for my participation in this
                         research?</strong>
                 </p>
-                <p>You will receive $4.34 per task once you finish your work.</p>
+                <p>You will receive $2.04 per task once you finish your work.</p>
                 <p>
                     <strong>Can I withdraw or be removed from the study?</strong>
                 </p>
                 <p>If you decide to participate, you have the right to withdraw your consent and leave the study at any
                     time without penalty.</p>
                 <p>To do so, send an email to <a href="http://parde@uic.edu"
-                        title="http://parde@uic.edu">parde@uic.edu</a> indicating your request. </p>
+                                                 title="http://parde@uic.edu">parde@uic.edu</a> indicating your request.
+                </p>
                 <p>The researchers also have the right to stop your participation in this study without your consent if
                     they believe it is in your best interests.</p>
                 <p>
@@ -251,29 +256,43 @@
             </div>
         </div>
         <!-- Step 3: Instructions, examples, and the task -->
-        <div class="step-content" id="step3">
+        <div class="step-content" id="step2">
             <div>
                 <h2>Instructions</h2>
-                <p class="m-2">
-                    <strong>Please read all the instructions carefully</strong>, this task should take you about 8
-                    minutes in total.
+                <p class="m-2">In this task you will read roughly thirty examples of sentences and two paraphrases
+                    created by a computer program. The program aims to rewrite the sentence so that it means the same
+                    thing, but using different words and/or different word order.
                 </p>
-                <p class="m-2">In this task you will read 32 sentences, each sentence comes with two paraphrases.
-                </p>
-                <p class="m-2">You must determine to what extent the <strong>meaning</strong>
-                    expressed in the original sentence is <strong>preserved</strong> in the rewritten version, with no
-                    additional information added.  </p>
 
-                    <!--                     You need to choose which system's paraphrase is closest in meaning to the
-                    original sentence. In other words, -->
+                <p class="m-2"><strong>Please read all the sentences carefully</strong>, this should take you about 8
+                    minutes (if you do the task very quickly your response will be rejected).</p>
+                <p class="m-2">You will be asked to choose which system performs better, for the below aspect of the
+                    paraphrases: </p>
+                <ul>
+                    <li>To what extent is the <strong>meaning</strong> expressed in the original sentence <strong>preserved</strong>
+                        in the rewritten version, with no additional information added?
+                    </li>
+                </ul>
+
+                <!-- <p class="m-2">In some cases the computer program will choose to add information which is not in the original sentence or miss out information. If this is the case then you should probably rank it lower in terms of meaning. </p>  -->
+                <!-- <p class="m-2">In some cases, the rewritten sentence might be a copy of the original sentence, or might only have a single word changed. </p> -->
+
+                <p class="m-2">Remember that you are being asked to <strong>rate the system</strong>, not the original.
+                </p>
+                <p class="m-2">If the control samples are not answered correctly then we will assume that you have
+                    answered at random and reject the response.</p>
+                <p class="m-2">A small number of samples may have two choices that are <strong>exactly</strong> the same
+                    - in these cases please pick an answer at random, this will not cause the response to be rejected.
+                </p>
+                <!--                     You need to choose which system's paraphrase is closest in meaning to the
+                original sentence. In other words, -->
                 <!-- <p class="m-2">
                     The program aims to rewrite the sentence so that it means the same thing, but
                     using different words and/or different word order.
                 </p> -->
                 <!-- <p class="m-2">In some cases the computer program will choose to add information which is not in the original sentence or miss out information. If this is the case then you should probably rank it lower in terms of meaning. </p>  -->
                 <!-- <p class="m-2">In some cases, the rewritten sentence might be a copy of the original sentence, or might only have a single word changed. </p> -->
-                <p class="m-2"><strong>Select the system</strong> that is closest
-                    in meaning to the original sentence. </p>
+
                 <!-- <p class="m-2">Some of the sentences only have small differences! Be careful to choose the one that is
                     <strong>most
                         different</strong> for the dissimilarity category. If the control samples are not answered correctly
@@ -295,24 +314,24 @@
                     <div class="card-body p-4">
                         <div class="row m-2">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"The Head of State of the USA is is
-                                        whom?"</strong>
+                                    whom?"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "Who is Captain America?"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaningex0" value="A" id="meaningex01"
-                                            onclick="updateExamples(0, 'meaning', 'A');"> A </label>
+                                               onclick="updateExamples(0, 'meaning', 'A');"> A </label>
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaningex0" value="B" id="meaningex02"
-                                            onclick="updateExamples(0, 'meaning', 'B');"> B </label>
+                                               onclick="updateExamples(0, 'meaning', 'B');"> B </label>
                                 </div>
                             </div>
                         </div>
@@ -329,25 +348,25 @@
                     <div class="card-body p-4">
                         <div class="row m-2">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong> "Vice President of the USA is
-                                        whom?"</strong>
+                                    whom?"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong>"Who the President of America
-                                        America?"</strong>
+                                    America?"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaningex1" value="A" id="meaningex11"
-                                            onclick="updateExamples(1, 'meaning', 'A');"> A </label>
+                                               onclick="updateExamples(1, 'meaning', 'A');"> A </label>
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaningex1" value="B" id="meaningex12"
-                                            onclick="updateExamples(1, 'meaning', 'B');"> B </label>
+                                               onclick="updateExamples(1, 'meaning', 'B');"> B </label>
                                 </div>
                             </div>
                         </div>
@@ -357,7 +376,8 @@
                     </div>
                 </div>
                 <div class="alert alert-danger" role="alert" id="incorrectExampleAlert" style="display: none;"> Selected
-                    answers are incorrect, You must pick the correct answer in order to proceed! </div>
+                    answers are incorrect, You must pick the correct answer in order to proceed!
+                </div>
                 <button class="btn btn-primary" onclick="proceedToTasks()">Validate &amp; Continue</button>
             </div>
             <div class="step-content" id="taskContainer">
@@ -370,16 +390,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa0}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb0}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning0" value="A" id="meaning0A"> A </label>
@@ -399,16 +419,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa1}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb1}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning1" value="A" id="meaning1A"> A </label>
@@ -428,16 +448,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa2}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb2}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning2" value="A" id="meaning2A"> A </label>
@@ -457,16 +477,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa3}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb3}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning3" value="A" id="meaning3A"> A </label>
@@ -486,16 +506,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa4}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb4}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning4" value="A" id="meaning4A"> A </label>
@@ -515,16 +535,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa5}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb5}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning5" value="A" id="meaning5A"> A </label>
@@ -544,16 +564,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa6}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb6}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning6" value="A" id="meaning6A"> A </label>
@@ -573,16 +593,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa7}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb7}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning7" value="A" id="meaning7A"> A </label>
@@ -602,16 +622,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa8}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb8}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning8" value="A" id="meaning8A"> A </label>
@@ -631,16 +651,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa9}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb9}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning9" value="A" id="meaning9A"> A </label>
@@ -660,16 +680,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa10}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb10}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning10" value="A" id="meaning10A"> A </label>
@@ -689,16 +709,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa11}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb11}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning11" value="A" id="meaning11A"> A </label>
@@ -718,16 +738,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa12}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb12}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning12" value="A" id="meaning12A"> A </label>
@@ -747,16 +767,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa13}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb13}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning13" value="A" id="meaning13A"> A </label>
@@ -776,16 +796,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa14}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb14}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning14" value="A" id="meaning14A"> A </label>
@@ -805,16 +825,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa15}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb15}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning15" value="A" id="meaning15A"> A </label>
@@ -834,16 +854,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa16}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb16}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning16" value="A" id="meaning16A"> A </label>
@@ -863,16 +883,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa17}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb17}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning17" value="A" id="meaning17A"> A </label>
@@ -892,16 +912,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa18}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb18}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning18" value="A" id="meaning18A"> A </label>
@@ -921,16 +941,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa19}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb19}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning19" value="A" id="meaning19A"> A </label>
@@ -950,16 +970,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa20}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb20}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning20" value="A" id="meaning20A"> A </label>
@@ -979,16 +999,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa21}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb21}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning21" value="A" id="meaning21A"> A </label>
@@ -1008,16 +1028,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa22}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb22}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning22" value="A" id="meaning22A"> A </label>
@@ -1037,16 +1057,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa23}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb23}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning23" value="A" id="meaning23A"> A </label>
@@ -1066,16 +1086,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa24}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb24}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning24" value="A" id="meaning24A"> A </label>
@@ -1095,16 +1115,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa25}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb25}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning25" value="A" id="meaning25A"> A </label>
@@ -1124,16 +1144,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa26}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb26}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning26" value="A" id="meaning26A"> A </label>
@@ -1153,16 +1173,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa27}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb27}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning27" value="A" id="meaning27A"> A </label>
@@ -1182,16 +1202,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa28}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb28}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning28" value="A" id="meaning28A"> A </label>
@@ -1211,16 +1231,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa29}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb29}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning29" value="A" id="meaning29A"> A </label>
@@ -1240,16 +1260,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa30}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb30}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning30" value="A" id="meaning30A"> A </label>
@@ -1269,16 +1289,16 @@
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-6">
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 <div class="row"> System A: &nbsp; <strong>"${outputa31}"</strong>
                                 </div>
-                                <br />
+                                <br/>
                                 <div class="row"> System B: &nbsp; <strong> "${outputb31}"</strong>
                                 </div>
                             </div>
-                            <div class="col-6 form-group text-center"> Closest in meaning <br />
-                                <br />
+                            <div class="col-6 form-group text-center"> Closest in meaning <br/>
+                                <br/>
                                 <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-secondary px-3">
                                         <input type="radio" name="meaning31" value="A" id="meaning31A"> A </label>
@@ -1291,19 +1311,52 @@
                 </div>
 
                 <div class="alert alert-danger" role="alert" id="incorrectTaskAlert" style="display: none;"> You must
-                    answer all the tasks before you can submit your work. </div>
+                    answer all the tasks before you can submit your work.
+                </div>
 
                 <button class="btn btn-success" onclick="validateForm()">Validate &amp; Submit</button>
             </div>
         </div>
     </div>
     <!--  -->
+    <textarea class="init-hidden" id="clicks" name="clicks"></textarea>
+    <textarea class="init-hidden" id="steps" name="steps"></textarea>
 </div>
 <!-- add some validation code -->
 <script type='text/javascript'>
     window.onload = function () {
+        logStepChange("welcome_page");
+
         // $('#error-wrapper').hide();
         // document.getElementById('submitButton').setAttribute('onclick', 'return validateForm()');
+        initPage();
+
+        var curr_time = new Date(new Date().getTime());
+        var clicks = {};
+        clicks["user_agent"] = navigator.userAgent;
+        clicks["clicks"] = []
+        clicks["start_time"] = curr_time.toString();
+
+        document.onclick = function logClicks(e) {
+            var id_tag = "no_id";
+            if ((typeof e.target.id != 'undefined') && (e.target.id.length > 0)) {
+                id_tag = e.target.id;
+            }
+            var new_time = new Date(new Date().getTime());
+            if (new_time > curr_time) {
+                curr_time = new_time;
+            }
+            var click = {
+                "click_x": e.pageX,
+                "click_y": e.pageY,
+                "nodeName": e.target.nodeName,
+                "id_tag": id_tag,
+                "time": curr_time.toString()
+            };
+            clicks["clicks"].push(click);
+            document.getElementById("clicks").value = JSON.stringify(clicks);
+        }
+
     }
 
     function updateExamples(example, field, score) {
@@ -1343,15 +1396,15 @@
 
     function checkScores() {
         // grammar - mean - simi
-        var cnames = ["meaning"]; //"grammar",
-        var actual_names = ["Meaning"] //"Fluency", 
-        var N_sent = 32;
+        let cnames = ["meaning"]; //"grammar",
+        let actual_names = ["Meaning"] //"Fluency",
+        let N_sent = 32;
         for (var i = 0; i < N_sent; i++) {
             for (var k = 0; k < cnames.length; k++) {
                 checkName = cnames[k] + i;
                 // alert(checkName);
                 checkValue = getCheckValue(checkName);
-                if (checkValue == "") {
+                if (checkValue === "") {
                     alert("Evaluation for Task " + (i + 1) + " is not finished!");
                     document.getElementById("incorrectTaskAlert").style.display = 'block';
                     $('#error-wrapper').show()
@@ -1365,10 +1418,10 @@
     }
 
     function checkExamples() {
-        incorrectExampleAlert = document.getElementById('incorrectExampleAlert');
+        let incorrectExampleAlert = document.getElementById('incorrectExampleAlert');
         console.log(incorrectExampleAlert)
-        examples_are_correct = true;
-        if (getCheckValue('meaningex0') != 'A' || getCheckValue('meaningex1') != 'B') {
+        let examples_are_correct = true;
+        if (getCheckValue('meaningex0') !== 'A' || getCheckValue('meaningex1') !== 'B') {
             incorrectExampleAlert.style.display = 'block';
             examples_are_correct = false;
         } else {
@@ -1378,24 +1431,40 @@
     }
 
     function validateForm() {
-        return checkScores();
-    }
+        if (!checkScores()) {
+            return; //
+        }
+        logStepChange("finished_page");
+        sendData();
 
-    function proceedToConsentPage() {
-        document.getElementById('step1').classList.remove('active-step');
-        document.getElementById('step2').classList.add('active-step');
     }
 
     function proceedToInstructions() {
-        document.getElementById('step2').classList.remove('active-step');
-        document.getElementById('step3').classList.add('active-step');
+        logStepChange("instructions_page");
+
+        document.getElementById('step1').classList.remove('active-step');
+        document.getElementById('step2').classList.add('active-step');
     }
 
     function proceedToTasks() {
         if (!checkExamples()) {
             return;
         }
+        logStepChange("task_page");
         document.getElementById('exampleContainer').classList.remove('active-step');
         document.getElementById('taskContainer').classList.add('active-step');
+    }
+
+    function logStepChange(step_name) {
+        let curr_time = new Date(new Date().getTime());
+        steps_value = document.getElementById("steps").value;
+        let steps;
+        if (steps_value === "") {
+            steps = {};
+        } else {
+            steps = JSON.parse(steps_value);
+        }
+        steps[step_name] = curr_time.toString();
+        document.getElementById("steps").value = JSON.stringify(steps);
     }
 </script>

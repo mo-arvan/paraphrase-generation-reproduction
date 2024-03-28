@@ -1,5 +1,5 @@
 "system","best_worst_scale"
+"vae", 36
+"lbow", -16
 "sep_ae", -24
 "hrq", 4
-"lbow", -16
-"vae", 36

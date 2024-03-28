@@ -6,10 +6,10 @@ from datetime import datetime
 
 
 def plot_relative_preference():
-    reproduction_results_df = pd.read_csv("results/metrics.csv")
-    hosking_results_df = pd.read_csv("results/Hosking_results.csv")
+    reproduction_results_df = pd.read_csv("results/lab1/results.csv")
+    hosking_results_df = pd.read_csv("results/original/results.csv")
     reproduction_results_df["From"] = "Ours"
-    hosking_results_df["From"] = "Hosking et al."
+    hosking_results_df["From"] = "Orig"
 
     stacked_df = pd.concat([reproduction_results_df, hosking_results_df], ignore_index=True)
 
@@ -42,8 +42,8 @@ def plot_relative_preference():
     for i in ax.containers:
         ax.bar_label(i, )
 
-    plt.savefig("results/figures/reproduction_results.pdf")
-    plt.savefig("results/figures/reproduction_results.png")
+    plt.savefig("results/lab1/figures/reproduction_results.pdf")
+    plt.savefig("results/lab1/figures/reproduction_results.png")
     plt.clf()
 
 
@@ -89,8 +89,8 @@ def plot_time_spent_on_pages():
     axes[2].set_title(f"Task Page (cap: {time_spent_task_cap:.2f})")
 
     plt.tight_layout()
-    plt.savefig("results/figures/time_spent_on_pages_hist.pdf")
-    plt.savefig("results/figures/time_spent_on_pages_hist.png")
+    plt.savefig("results/lab1/figures/time_spent_on_pages_hist.pdf")
+    plt.savefig("results/lab1/figures/time_spent_on_pages_hist.png")
 
     plt.clf()
 
@@ -105,8 +105,8 @@ def plot_time_spent_on_pages():
     ax = sns.boxplot(data=time_df)
     ax.set_title("Time spent on each page")
     plt.tight_layout()
-    plt.savefig("results/figures/time_spent_on_pages_box.pdf")
-    plt.savefig("results/figures/time_spent_on_pages_box.png")
+    plt.savefig("results/lab1/figures/time_spent_on_pages_box.pdf")
+    plt.savefig("results/lab1/figures/time_spent_on_pages_box.png")
 
     plt.clf()
 

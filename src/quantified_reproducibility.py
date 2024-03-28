@@ -26,10 +26,10 @@ def calculate_pearson_spearman_correlation(set_a, set_b):
         "spearman_p": spearman_p,
     }
     df = pd.DataFrame([pearson_result_dict])
-    df.to_latex("results/tables/pearson.tex", float_format="{:0.2f}".format, escape=True)
+    df.to_latex("results/lab1/tables/pearson.tex", float_format="{:0.2f}".format, escape=True)
     print(df)
     df = pd.DataFrame([spearman_result_dict])
-    df.to_latex("results/tables/spearman.tex", float_format="{:0.2f}".format, escape=True)
+    df.to_latex("results/lab1/tables/spearman.tex", float_format="{:0.2f}".format, escape=True)
     print(df)
 
 
@@ -50,13 +50,13 @@ def calculate_coefficient_of_variation(set_a, set_b, range_start, range_end):
         full_result_list.append(precision_results)
     df = pd.DataFrame(full_result_list)
 
-    df.to_latex("results/tables/cv.tex", float_format="{:0.2f}".format, escape=True)
+    df.to_latex("results/lab1/tables/cv_2_way.tex", float_format="{:0.2f}".format, escape=True)
     print(df)
 
 
 def main():
-    results_df = pd.read_csv("results/metrics.csv")
-    hosking_results = pd.read_csv("results/Hosking_results.csv")
+    results_df = pd.read_csv("results/lab1/results.csv")
+    hosking_results = pd.read_csv("results/original/results.csv")
 
     results_df.sort_values(by="system", inplace=True)
     hosking_results.sort_values(by="system", inplace=True)
