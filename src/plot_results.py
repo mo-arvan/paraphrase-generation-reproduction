@@ -80,9 +80,9 @@ def plot_time_spent_on_pages():
 
     # plot histogram of time spent on each page using sns.histplot
     fig, axes = plt.subplots(3, 1, figsize=(8, 9))
-    sns.histplot(time_spent_on_welcome, ax=axes[0])
-    sns.histplot(time_spent_on_instructions, ax=axes[1])
-    sns.histplot(time_spent_on_task, ax=axes[2])
+    sns.histplot(time_spent_on_welcome, ax=axes[0], kde=True, stat='count', color='blue')
+    sns.histplot(time_spent_on_instructions, ax=axes[1], kde=True, stat='count', color='blue')
+    sns.histplot(time_spent_on_task, ax=axes[2], kde=True, stat='count', color='blue')
 
     axes[0].set_title(f"Welcome Page (cap: {time_spent_welcome_cap:.2f})")
     axes[1].set_title(f"Instructions Page (cap: {time_spent_instructions_cap:.2f})")
@@ -108,6 +108,29 @@ def plot_time_spent_on_pages():
     plt.savefig("results/lab1/figures/time_spent_on_pages_box.pdf")
     plt.savefig("results/lab1/figures/time_spent_on_pages_box.png")
 
+    plt.clf()
+
+    fig, axes = plt.subplots(3, 1, figsize=(8, 9))
+
+    sns.ecdfplot(time_spent_on_welcome, ax=axes[0], color='blue')
+    sns.ecdfplot(time_spent_on_instructions, ax=axes[1], color='blue')
+    sns.ecdfplot(time_spent_on_task, ax=axes[2], color='blue')
+
+    axes[0].set_title(f"Welcome Page")
+    axes[1].set_title(f"Instructions Page")
+    axes[2].set_title(f"Task Page")
+
+    axes[0].set_xlabel('Time spent (seconds)')
+    axes[1].set_xlabel('Time spent (seconds)')
+    axes[2].set_xlabel('Time spent (seconds)')
+
+    # axes[0].set_ylabel('Cumulative Probability')
+    # axes[1].set_ylabel('Cumulative Probability')
+    # axes[2].set_ylabel('Cumulative Probability')
+
+    plt.tight_layout()
+    plt.savefig("results/lab1/figures/time_spent_on_pages_ecdf.pdf")
+    plt.savefig("results/lab1/figures/time_spent_on_pages_ecdf.png")
     plt.clf()
 
 
