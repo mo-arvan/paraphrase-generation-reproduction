@@ -2,6 +2,13 @@ import csv
 
 import krippendorff
 import pandas as pd
+import csv
+import numpy as np
+import pandas as pd
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+from statsmodels.stats.multicomp import MultiComparison
+from scipy import stats
+import argparse
 
 
 def get_selected_systems(meaning_i):
@@ -43,7 +50,9 @@ def filter_attention_checks(results_df):
 
     print(f"Users without attention checks: {len(users_without_attention_checks)}")
 
+    # print(f"Warning, redo analysis with the line below uncommented")
     filtered_results_df = results_df[~results_df["participant_id"].isin(users_with_failed_attention_checks)]
+    # filtered_results_df = results_df
 
     filtered_results_df = filtered_results_df[~filtered_results_df["systema"].isin(attention_check_list)]
     filtered_results_df = filtered_results_df[~filtered_results_df["systemb"].isin(attention_check_list)]
@@ -106,12 +115,106 @@ def calculate_inter_annotator_agreement(responses_processed_df):
 
 
 def print_datasets_used(responses_processed_df):
+    responses_processed_df.sort_values(by=["dataset_id", "systema", "systemb"])
     datasets_and_index = responses_processed_df[["dataset", "dataset_index"]].drop_duplicates(keep="first")
     datasets_grouped = datasets_and_index[["dataset"]].groupby("dataset").agg(count=("dataset", "size")).reset_index()
 
     datasets_grouped.to_csv("results/lab1/tables/datasets_used.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
     datasets_grouped.to_latex("results/lab1/tables/datasets_used.tex", index=False, escape=True, float_format="%.2f")
     print(datasets_grouped)
+
+    # hrq:a vae:b lbow:c sep_ae:d
+    # a b -
+    # a c -
+    # a d -
+    # b c -
+    # b d
+    # c d -
+
+
+def calculate_metrics_alternative_2(responses_processed_df):
+    system_order_dict = {"vae": 0,
+                         "lbow": 1,
+                         "sep_ae": 2,
+                         "hrq": 3
+                         }
+
+    system_count_dict = {system: 0 for system in system_order_dict.keys()}
+
+    scores_list = []
+
+    for _, row in responses_processed_df.iterrows():
+        system_a_dict = {"system": row["systema"]}
+        system_b_dict = {"system": row["systemb"]}
+        if row["selected_system"] == 0:
+            system_a_dict["score"] = 1
+            system_b_dict["score"] = -1
+        elif row["selected_system"] == 1:
+            system_a_dict["score"] = -1
+            system_b_dict["score"] = 1
+        else:
+            raise ValueError(f"Unexpected value: {row['selected_system']}")
+        scores_list.append(system_a_dict)
+        scores_list.append(system_b_dict)
+
+    scores_df = pd.DataFrame(scores_list)
+
+    return scores_df, system_count_dict
+
+
+def perform_significant_testing(responses_processed_df):
+    dataset_id_list = responses_processed_df["dataset_id"].unique().tolist()
+
+    system_order_dict = {"vae": 0,
+                         "lbow": 1,
+                         "sep_ae": 2,
+                         "hrq": 3
+                         }
+
+    system_count_dict = {system: 0 for system in system_order_dict.keys()}
+
+    scores_list = []
+    for dataset_id in dataset_id_list:
+        task_responses_df = responses_processed_df[responses_processed_df["dataset_id"] == dataset_id]
+        system_scores = {system: 0 for system in system_order_dict.keys()}
+        for _, row in task_responses_df.iterrows():
+            if row["selected_system"] == 0:
+                system_scores[row["systema"]] += 1
+                system_scores[row["systemb"]] -= 1
+            elif row["selected_system"] == 1:
+                system_scores[row["systemb"]] += 1
+                system_scores[row["systema"]] -= 1
+            else:
+                raise ValueError(f"Unexpected value: {row['selected_system']}")
+
+            system_count_dict[row["systema"]] += 1
+            system_count_dict[row["systemb"]] += 1
+
+        scores_list.append(system_scores)
+
+    scores_df = pd.DataFrame(scores_list)
+
+    statistic, p = stats.f_oneway(*(scores_df.values.T).tolist())
+    print('One-way ANOVA')
+    print('=============')
+
+    print('F value:', statistic)
+    print('P value', p, '\n')
+
+    # unpivot vae, lbow, sep_ae, hrq into a single column called system
+    scores_melted_df = scores_df.melt(var_name="system", value_name="score")
+
+    mc = MultiComparison(scores_melted_df['score'], scores_melted_df['system'])
+    result = mc.tukeyhsd()
+    print(result)
+
+    with open("results/lab1/anova_tukeyhsd.txt", "w") as file:
+        file.write(f"One-way ANOVA\n")
+        file.write(f"F value: {f}\n")
+        file.write(f"P value: {p}\n")
+        file.write("Tukey HSD:\n")
+        file.write(str(result))
+    return scores_df, system_count_dict
 
 
 def calculate_metrics(responses_processed_df):
@@ -147,8 +250,8 @@ def calculate_metrics(responses_processed_df):
             "system": system,
             "wins": wins_count,
             "losses": losses_count,
-            "best_worst_scale": best_worst_scale,
             "best_worst_score": wins_count - losses_count,
+            "best_worst_scale": best_worst_scale,
             "win_percentage": win_percentage,
         }
         metrics_list.append(metrics_dict)
@@ -176,6 +279,7 @@ def main():
 
     print_datasets_used(responses_processed_df)
 
+    perform_significant_testing(responses_processed_df)
     metrics_df = calculate_metrics(responses_processed_df)
 
     alpha = calculate_inter_annotator_agreement(responses_processed_df)
