@@ -1,0 +1,9 @@
+group_count: 4
+desired_alpha: 0.05
+sample_size: 300
+effect_size: 0.16707016191210514
+residual: 0.8329298380878949
+current_power: 0.6699157055260563
+required_sample_size: 394.5269799236707
+adjusted_alpha: 0.052
+adjusted_power: 0.8046825274578073

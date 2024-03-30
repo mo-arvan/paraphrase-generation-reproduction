@@ -162,7 +162,7 @@ def calculate_metrics_alternative_2(responses_processed_df):
     return scores_df, system_count_dict
 
 
-def perform_significant_testing(responses_processed_df):
+def get_task_scores(responses_processed_df):
     dataset_id_list = responses_processed_df["dataset_id"].unique().tolist()
 
     system_order_dict = {"vae": 0,
@@ -193,6 +193,12 @@ def perform_significant_testing(responses_processed_df):
         scores_list.append(system_scores)
 
     scores_df = pd.DataFrame(scores_list)
+
+    return scores_df, system_count_dict
+
+
+def perform_significant_testing(responses_processed_df):
+    scores_df, system_count_dict = get_task_scores(responses_processed_df)
 
     statistic, p = stats.f_oneway(*(scores_df.values.T).tolist())
     print('One-way ANOVA')
@@ -273,9 +279,14 @@ def calculate_metrics(responses_processed_df):
     return metrics_df
 
 
-def main():
+def load_and_preprocess_responses():
     responses_df = pd.read_csv('responses/responses.csv')
     responses_processed_df = preprocess_responses_df(responses_df)
+    return responses_processed_df
+
+
+def main():
+    responses_processed_df = load_and_preprocess_responses()
 
     print_datasets_used(responses_processed_df)
 
