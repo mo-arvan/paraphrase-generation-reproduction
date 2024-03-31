@@ -1,6 +1,7 @@
 from scipy.stats import pearsonr, spearmanr
 import cv
 import pandas as pd
+import csv
 
 
 def calculate_pearson_spearman_correlation(set_a, set_b):
@@ -26,9 +27,12 @@ def calculate_pearson_spearman_correlation(set_a, set_b):
         "spearman_p": spearman_p,
     }
     df = pd.DataFrame([pearson_result_dict])
+    df.to_csv("results/lab1/tables/pearson.csv", index=False, quoting=csv.QUOTE_NONNUMERIC, )
     df.to_latex("results/lab1/tables/pearson.tex", float_format="{:0.2f}".format, escape=True)
+
     print(df)
     df = pd.DataFrame([spearman_result_dict])
+    df.to_csv("results/lab1/tables/spearman.csv", index=False, quoting=csv.QUOTE_NONNUMERIC, )
     df.to_latex("results/lab1/tables/spearman.tex", float_format="{:0.2f}".format, escape=True)
     print(df)
 
@@ -55,7 +59,7 @@ def calculate_coefficient_of_variation(set_a, set_b, range_start, range_end):
 
 
 def main():
-    results_df = pd.read_csv("results/lab1/results.csv")
+    results_df = pd.read_csv("results/lab1/tables/results.csv")
     hosking_results = pd.read_csv("results/original/results.csv")
 
     results_df.sort_values(by="system", inplace=True)

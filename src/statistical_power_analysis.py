@@ -5,7 +5,7 @@ from numpy import std, mean, sqrt
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
 
-from analyze_human_eval import get_task_scores, load_and_preprocess_responses
+from analyze_responses import get_task_scores, load_and_preprocess_responses
 
 
 def calculate_sample_size(groups, alpha, effect_size):
