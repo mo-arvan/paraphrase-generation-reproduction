@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 def plot_relative_preference():
-    reproduction_results_df = pd.read_csv("results/lab1/results.csv")
+    reproduction_results_df = pd.read_csv("results/lab1/tables/results.csv")
     hosking_results_df = pd.read_csv("results/original/results.csv")
     reproduction_results_df["From"] = "Ours"
     hosking_results_df["From"] = "Orig"
