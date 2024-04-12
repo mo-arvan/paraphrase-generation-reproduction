@@ -78,8 +78,15 @@ def plot_time_spent_on_pages():
     time_spent_on_task.loc[
         time_spent_on_task > time_spent_task_cap] = time_spent_task_cap
 
+    with open("results/lab1/time_spent_on_pages.txt", "w") as f:
+        for i in range(10):
+            f.write(f"Welcome Page {0.1* i} quantile: {time_spent_on_welcome.quantile(0.1 * i):.2f}\n")
+            f.write(f"Instructions Page {0.1* i} quantile: {time_spent_on_instructions.quantile(0.1 * i):.2f}\n")
+            f.write(f"Task Page {0.1* i} quantile: {time_spent_on_task.quantile(0.1 * i):.2f}\n")
+
+
     # plot histogram of time spent on each page using sns.histplot
-    fig, axes = plt.subplots(3, 1, figsize=(8, 9))
+    fig, axes = plt.subplots(3, 1, figsize=(4, 9))
     sns.histplot(time_spent_on_welcome, ax=axes[0], kde=True, stat='count', color='blue')
     sns.histplot(time_spent_on_instructions, ax=axes[1], kde=True, stat='count', color='blue')
     sns.histplot(time_spent_on_task, ax=axes[2], kde=True, stat='count', color='blue')
@@ -101,7 +108,7 @@ def plot_time_spent_on_pages():
     })
 
     # plot boxplot of time spent on each page using sns.boxplot
-    fig, axes = plt.subplots(1, 1, figsize=(8, 6))
+    fig, axes = plt.subplots(1, 1, figsize=(4, 3))
     ax = sns.boxplot(data=time_df)
     ax.set_title("Time spent on each page")
     plt.tight_layout()
@@ -110,7 +117,7 @@ def plot_time_spent_on_pages():
 
     plt.clf()
 
-    fig, axes = plt.subplots(3, 1, figsize=(8, 9))
+    fig, axes = plt.subplots(3, 1, figsize=(4, 9))
 
     sns.ecdfplot(time_spent_on_welcome, ax=axes[0], color='blue')
     sns.ecdfplot(time_spent_on_instructions, ax=axes[1], color='blue')
