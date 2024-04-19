@@ -95,6 +95,10 @@ def plot_time_spent_on_pages():
     axes[1].set_title(f"Instructions Page (cap: {time_spent_instructions_cap:.2f})")
     axes[2].set_title(f"Task Page (cap: {time_spent_task_cap:.2f})")
 
+    axes[0].set_xlabel('Time spent (seconds)')
+    axes[1].set_xlabel('Time spent (seconds)')
+    axes[2].set_xlabel('Time spent (seconds)')
+
     plt.tight_layout()
     plt.savefig("results/lab1/figures/time_spent_on_pages_hist.pdf")
     plt.savefig("results/lab1/figures/time_spent_on_pages_hist.png")

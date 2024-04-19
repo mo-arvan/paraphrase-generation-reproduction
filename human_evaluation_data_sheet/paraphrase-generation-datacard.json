@@ -1,0 +1,1217 @@
+{
+    "heds-criteria-criterion-response_elicitation-response_aggregation": {
+        "data": {
+            "Fluency": "Each system is assigned a score of +1 when it was selected, −1 when the other system was selected, and took the mean over all samples. Negative scores indicate that a system was selected less often than an alternative.",
+            "Dissimilarity": "Each system is assigned a score of +1 when it was selected, −1 when the other system was selected, and took the mean over all samples. Negative scores indicate that a system was selected less often than an alternative.",
+            "Meaning": "Each system is assigned a score of +1 when it was selected, −1 when the other system was selected, and took the mean over all samples. Negative scores indicate that a system was selected less often than an alternative."
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-evaluation_mode-objective_or_subjective-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-paper_and_resources-names_and_affiliations-person_completing_this_sheet-affiliation": {
+        "data": {
+            "": "University of Illinois at Chicago"
+        },
+        "control": {}
+    },
+    "heds-paper_and_resources-names_and_affiliations-person_completing_this_sheet-name": {
+        "data": {
+            "": "Mohammad Arvan"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-criteria-output_aspect-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-expertise-other_text": {
+        "data": {
+            "": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-expertise-1": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-10": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-scale_presented_as-2": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-paper_and_resources-names_and_affiliations-contact_author-affiliation": {
+        "data": {
+            "": "University of Illinois at Chicago"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-7": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-5": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-quality_assurance-description": {
+        "data": {
+            "": "Each task contained two control samples; in one control sample, the system\nwas a “distractor” and the output was a random sample with a completely different meaning that should clearly never be chosen as best for the\nmeaning criterion. The other control sample was when the system’s output was the same as the input, which should clearly never be chosen as best\nfor the dissimilarity criterion."
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-1": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "1. evaluation carried out by evaluators at a place of their own choosing, e.g. online, using a paper form, etc."
+        }
+    },
+    "heds-ethics-review_body": {
+        "data": {
+            "": "Yes, UIC IRB"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-effect_size_method": {
+        "data": {
+            "Fluency": "NA",
+            "Dissimilarity": "NA",
+            "Meaning": "NA"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-evaluation_mode-intrinsic_or_extrinsic-1": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "1. Intrinsic",
+            "Dissimilarity": "1. Intrinsic",
+            "Meaning": "1. Intrinsic"
+        }
+    },
+    "heds-criteria-criterion-evaluation_mode-objective_or_subjective-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-scale_presented_as-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-description": {
+        "data": {
+            "": "Used Prolific, 60 tasks, each given 3 times. "
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-sample-number_of_system_outputs": {
+        "data": {
+            "": "300 sentences for each system"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-intra_annotator-intra_annotator_agreement-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-size_of_scale-2": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-evaluation_mode-absolute_or_relative-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-quality_assurance-method-1": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "1. evaluators are required to be native speakers of the language they evaluate."
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-payment-other_text": {
+        "data": {
+            "": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-other_text": {
+        "data": {
+            "": ""
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-9": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-evaluation_mode-intrinsic_or_extrinsic-2": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-criteria-quality_type-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": "1. Correctness"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-task_description": {
+        "data": {
+            "Fluency": "N/A",
+            "Dissimilarity": "N/A",
+            "Meaning": "NA"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-participant_criterion_name": {
+        "data": {
+            "Fluency": " Most grammatical ",
+            "Dissimilarity": " More dissimilar phrasing ",
+            "Meaning": " Closest in meaning "
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-intra_annotator-intra_annotator_agreement-3": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-7": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-intra_annotator-intra_annotator_agreement_score": {
+        "data": {
+            "Fluency": "NA",
+            "Dissimilarity": "N/A",
+            "Meaning": "NA"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-2": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-are_authors-2": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "2. evaluators do not include any of the authors"
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-evaluators_place_of_choosing": {
+        "data": {
+            "": "N/A"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-what_evaluators_see-link": {
+        "data": {
+            "": "https://github.com/mo-arvan/paraphrase-generation-reproduction/tree/main/interface"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion": {
+        "data": {},
+        "control": {
+            "Meaning": true
+        },
+        "text": {}
+    },
+    "heds-criteria-criterion-criteria-quality_type-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-criteria-quality_type-3": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": true,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "3. Feature",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-evaluators_can_ask_questions-5": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "5. None of the above"
+        }
+    },
+    "heds-system-output_languages-41": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "41. English"
+        }
+    },
+    "heds-sample_evaluators_design-sample-system_output_selection-2": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-8": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-size_of_scale-3": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-scale_presented_as-3": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-criteria-output_aspect-2": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "2. Content of output",
+            "Meaning": "2. Content of output"
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-number_of_evaluators": {
+        "data": {
+            "": "180"
+        },
+        "control": {}
+    },
+    "heds-system-input_types-5": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "5. text: sentence"
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-3": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-size_of_scale-other_text": {
+        "data": {
+            "Fluency": "2",
+            "Dissimilarity": "2",
+            "Meaning": "2"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-sample-statistical_power-method": {
+        "data": {
+            "": "FTestAnovaPower"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-sample-system_output_selection-4": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-scale_presented_as-4": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-characteristics": {
+        "data": {
+            "": "from the UK and USA, Canada and Australia"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-inter_annotator-agreement-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": "1. yes"
+        }
+    },
+    "heds-system-tasks-13": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "13. paraphrasing/lossless simplification"
+        }
+    },
+    "heds-criteria-criterion-criteria-self_vs_external_frame-2": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-ethics-impact_assessments": {
+        "data": {
+            "": "no"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-size_of_scale-1": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "1. Discrete",
+            "Dissimilarity": "1. Discrete",
+            "Meaning": "1. Discrete"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-participant_criterion_definiiton": {
+        "data": {
+            "Fluency": "Which system output is the most fluent and grammatical?",
+            "Dissimilarity": "use different words or phrasing to the original",
+            "Meaning": "The extent is the meaning expressed in the original sentence preserved in the rewritten version"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-5": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-criteria-output_aspect-3": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "3. Both form and content of output",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-evaluation_mode-absolute_or_relative-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-2": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-scale_presented_as-5": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-8": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-6": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-payment-3": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-sample_evaluators_design-sample-system_output_selection-1": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "1. by an automatic random process"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-inter_annotator-agreement_score": {
+        "data": {
+            "Fluency": "NA",
+            "Dissimilarity": "N/A",
+            "Meaning": "0.51"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-expertise-2": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "2. non-experts"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-verbatim_question": {
+        "data": {
+            "Fluency": "Which system output is the most fluent and grammatical?",
+            "Dissimilarity": "Does the rewritten version use different words or phrasing to the original? You should choose the system that uses the most different words or word order.",
+            "Meaning": "To what extent is the meaning expressed in the original sentence preserved in the rewritten version, with no additional information added?"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-known_to_authors-2": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "2. not previously known to authors"
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-payment-1": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "1. paid (monetary compensation)"
+        }
+    },
+    "heds-criteria-criterion-evaluation_mode-objective_or_subjective-2": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "2. Subjective",
+            "Dissimilarity": "2. Subjective",
+            "Meaning": "2. Subjective"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-4": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-known_to_authors-other_text": {
+        "data": {
+            "": ""
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-criteria-output_aspect-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-criteria-quality_type-2": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "2. Goodness",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-sample-system_output_selection-other_text": {
+        "data": {
+            "": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-sample-system_output_selection-5": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-evaluation_mode-absolute_or_relative-2": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "2. Relative",
+            "Dissimilarity": "2. Relative",
+            "Meaning": "2. Relative"
+        }
+    },
+    "heds-paper_and_resources-names_and_affiliations-contact_author-name": {
+        "data": {
+            "": "Natalie Parde"
+        },
+        "control": {}
+    },
+    "heds-ethics-special_category_data": {
+        "data": {
+            "": "no"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-6": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-system-input_languages-41": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "41. English"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-list_or_range": {
+        "data": {
+            "Fluency": "A better, B better",
+            "Dissimilarity": "A better, B better",
+            "Meaning": "A better, B better"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-recruitment_method": {
+        "data": {
+            "": "Prolific"
+        },
+        "control": {}
+    },
+    "heds-paper_and_resources-names_and_affiliations-contact_author-email": {
+        "data": {
+            "": "parde@uic.edu"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-known_to_authors-1": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-sample_evaluators_design-sample-system_output_selection-3": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-training_practice": {
+        "data": {
+            "": "Instructions\n\nIn this task you will read roughly thirty examples of sentences and two paraphrases created by a computer program. The program aims to rewrite the sentence so that it means the same thing, but using different words and/or different word order.\n\nPlease read all the sentences carefully, this should take you about 20 minutes (if you do the task very quickly your HIT will be rejected).\n\nYou will be asked to choose which system performs better, for three aspects of the paraphrases:\n\n    Which system output is the most fluent and grammatical?\n    To what extent is the meaning expressed in the original sentence preserved in the rewritten version, with no additional information added?\n    Does the rewritten version use different words or phrasing to the original? You should choose the system that uses the most different words or word order.\n\nRemember that you are being asked to rate the system, not the original.\n\nSome of the sentences only have small differences! Be careful to choose the one that is most different for the dissimilarity category. If the control samples are not answered correctly then we will assume that you have answered at random and reject the HIT.\n\nA small number of samples may have two choices that are *exactly* the same - in these cases please pick an answer at random, this will not cause the HIT to be rejected.\nExamples\n\nFirst, complete these example tasks correctly:\n\nOriginal: Who is the President of America?\n\n\nSystem A:  \n\"The Head of State of the USA is is whom?\"\n\nSystem B:  \n\"Who is Captain America?\"\nMost grammatical\n\nClosest in meaning\n\nMore dissimilar phrasing\n\nFluency: System A has repeated a word, but System B is grammatically correct, so click 'B'. ✔\n\nMeaning: System A is closer to the original meaning that System B, so click 'A'. ✔\n\nDissimilarity: System A also uses more different words/phrasing than System B, so click 'A'. ✔\n\nOriginal: Who is the President of America?\n\n\nSystem A:  \n\"Who the President of America America?\"\n\nSystem B:  \n\"Vice President of the USA is whom?\"\nMost grammatical\n\nClosest in meaning\n\nMore dissimilar words/phrasing\n\nFluency: Both outputs have grammar errors, but System B is closer to being correct, so click 'B'.\n\nMeaning: System A means the same thing as the original, but System B doesn't, so click 'A'.\n\nDissimilarity: System B uses more different words/phrasing than System A, so click 'B'. "
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-payment-4": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-criteria-self_vs_external_frame-3": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "3. Quality of output relative to a system-external frame of reference",
+            "Dissimilarity": "3. Quality of output relative to a system-external frame of reference",
+            "Meaning": "3. Quality of output relative to a system-external frame of reference"
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-evaluator_freedom-2": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "2. evaluators have to complete the whole evaluation in one sitting"
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-are_authors-1": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-paper_and_resources-paper-link": {
+        "data": {
+            "": "https://aclanthology.org/2022.acl-long.178"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-evaluation_mode-intrinsic_or_extrinsic-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-ethics-personal_data": {
+        "data": {
+            "": "no"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-experimental_conditions-4": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-intra_annotator-intra_annotator_agreement-2": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "2. no",
+            "Dissimilarity": "2. no",
+            "Meaning": "2. no"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-intra_annotator-intra_annotator_agreement-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-collection_method": {
+        "data": {
+            "": "Prolific"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-inter_annotator-agreement-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": "Krippendorff's alpha"
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-what_evaluators_see-description": {
+        "data": {
+            "": "Consent information, instructions, examples, and tasks. \nEach task consists of 30 input sentence and two system output for each input sentence. The participant are asked to select one of the outputs as superior in the three selected criteria. "
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-experimental_design-preregistered-2": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "2. no"
+        }
+    },
+    "heds-criteria-criterion-criteria-self_vs_external_frame-1": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-payment-2": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-preregistered-1": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-system-output_types-5": {
+        "data": {
+            "": true
+        },
+        "control": {},
+        "text": {
+            "": "5. text: sentence"
+        }
+    },
+    "heds-sample_evaluators_design-experimental_design-preregistered-other_text": {
+        "data": {
+            "": ""
+        },
+        "control": {}
+    },
+    "heds-paper_and_resources-resources-links": {
+        "data": {
+            "": "https://github.com/mo-arvan/paraphrase-generation-reproduction"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-criteria-self_vs_external_frame-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-expertise-3": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-sample_evaluators_design-sample-statistical_power-value": {
+        "data": {
+            "": "large effect size of 0.17 for the ANOVA test. With a sample size of 300 and α=0.05, the calculated test power was 0.67."
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-inter_annotator-agreement-3": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-are_authors-other_text": {
+        "data": {
+            "": ""
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-inter_annotator-agreement-2": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "2. no",
+            "Dissimilarity": "2. no",
+            "Meaning": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-3": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "3. relative quality estimation (including ranking)",
+            "Dissimilarity": "3. relative quality estimation (including ranking)",
+            "Meaning": "3. relative quality estimation (including ranking)"
+        }
+    },
+    "heds-paper_and_resources-paper-experiment_identification": {
+        "data": {
+            "": "5.3 Human Evaluation, Figure 4\nwere shown a sentence and two paraphrases, each generated by a different system, and asked to select which one was preferred along three dimensions: the dissimilarity of the paraphrase compared to the original sentence; how well the paraphrase reflected the meaning of the original; and the fluency of the paraphrase."
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-are_authors-3": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-other_text": {
+        "data": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        },
+        "control": {}
+    },
+    "heds-sample_evaluators_design-evaluators-evaluators-known_to_authors-3": {
+        "data": {
+            "": false
+        },
+        "control": {},
+        "text": {
+            "": ""
+        }
+    },
+    "heds-sample_evaluators_design-sample-statistical_power-script": {
+        "data": {
+            "": "https://github.com/mo-arvan/paraphrase-generation-reproduction"
+        },
+        "control": {}
+    },
+    "heds-criteria-criterion-response_elicitation-scale_presented_as-1": {
+        "data": {
+            "Fluency": true,
+            "Dissimilarity": true,
+            "Meaning": true
+        },
+        "control": {},
+        "text": {
+            "Fluency": "1. Multiple-choice options",
+            "Dissimilarity": "1. Multiple-choice options",
+            "Meaning": "1. Multiple-choice options"
+        }
+    },
+    "heds-criteria-criterion-response_elicitation-form_of_response-11": {
+        "data": {
+            "Fluency": false,
+            "Dissimilarity": false,
+            "Meaning": false
+        },
+        "control": {},
+        "text": {
+            "Fluency": "",
+            "Dissimilarity": "",
+            "Meaning": ""
+        }
+    },
+    "heds-paper_and_resources-names_and_affiliations-person_completing_this_sheet-email": {
+        "data": {
+            "": "marvan3@uic.edu"
+        },
+        "control": {}
+    }
+}
